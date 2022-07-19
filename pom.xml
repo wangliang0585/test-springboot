@@ -15,7 +15,7 @@
     <description>springboot</description>
     <properties>
         <java.version>1.8</java.version>
-        <dockerfile-maven-version>1.4.13</dockerfile-maven-version>
+<!--        <dockerfile-maven-version>1.4.13</dockerfile-maven-version>-->
     </properties>
     <dependencies>
         <dependency>
@@ -65,28 +65,28 @@
                     </excludes>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>com.spotify</groupId>
-                <artifactId>dockerfile-maven-plugin</artifactId>
-                <version>${dockerfile-maven-version}</version>
-                <executions>
-                    <execution>
-                        <id>default</id>
-                        <goals>
-                            <goal>build</goal>
-                            <goal>push</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <repository>test/springboot</repository>
-                    <tag>latest</tag>
-                    <buildArgs>
-                        <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
-                    </buildArgs>
-                    <dockerfile>Dockerfile</dockerfile>
-                </configuration>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>com.spotify</groupId>-->
+<!--                <artifactId>dockerfile-maven-plugin</artifactId>-->
+<!--                <version>${dockerfile-maven-version}</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>default</id>-->
+<!--                        <goals>-->
+<!--                            <goal>build</goal>-->
+<!--                            <goal>push</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--                <configuration>-->
+<!--                    <repository>test/springboot</repository>-->
+<!--                    <tag>latest</tag>-->
+<!--                    <buildArgs>-->
+<!--                        <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>-->
+<!--                    </buildArgs>-->
+<!--                    <dockerfile>Dockerfile</dockerfile>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
 
         </plugins>
     </build>
